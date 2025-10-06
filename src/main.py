@@ -17,6 +17,7 @@ from src.routes.products import products_bp
 from src.routes.orders import orders_bp
 from src.routes.auth import auth_bp
 from src.routes.admin import admin_bp
+from src.routes.payment import payment_bp
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 
@@ -38,6 +39,7 @@ app.register_blueprint(user_bp, url_prefix='/api/users')
 app.register_blueprint(products_bp, url_prefix='/api/products')
 app.register_blueprint(orders_bp, url_prefix='/api/orders')
 app.register_blueprint(admin_bp, url_prefix='/api/admin')
+app.register_blueprint(payment_bp, url_prefix='/api/payment')
 
 def seed_products():
     """Seed initial products"""
